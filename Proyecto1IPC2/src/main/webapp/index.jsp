@@ -1,3 +1,4 @@
+<%@page import="backendDB.RevistaService"%>
 <%@page import="Modelos.Revista"%>
 <%@page import="java.util.List"%>
 <%@page import="backenDB.RevistaService"%>
