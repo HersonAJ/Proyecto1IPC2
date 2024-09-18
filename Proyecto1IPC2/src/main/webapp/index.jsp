@@ -7,10 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <title>HomePage - Revista Digital</title>
-    <jsp:include page="resources/resources.jsp" />
+    <jsp:include page="/resources/resources.jsp" />
 </head>
 <body>
-    <jsp:include page="resources/header.jsp" />
+    <jsp:include page="/resources/header.jsp" />
     
     <div class="container my-4">
         <div class="row">
@@ -93,3 +93,4 @@
     </div>
 </body>
 </html>
+

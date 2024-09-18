@@ -7,25 +7,25 @@
             </a>
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li class="text-center">
-                    <a href="HomePage3.jsp" class="nav-link text-secondary">
+                    <a href="${pageContext.request.contextPath}/index.jsp" class="nav-link text-secondary">
                         <i class="bi bi-house d-block mx-auto mb-1"></i>
                         Inicio
                     </a>
                 </li>
                 <li class="text-center">
-                    <a href="CategoriasBST.jsp" class="nav-link text-white">
+                    <a href="${pageContext.request.contextPath}/Revista/Categoria.jsp" class="nav-link text-white">
                         <i class="bi bi-speedometer2 d-block mx-auto mb-1"></i>
                         Categorías
                     </a>
                 </li>
                 <li class="text-center">
-                    <a href="MisSuscripciones.jsp" class="nav-link text-white">
+                    <a href="${pageContext.request.contextPath}/Revista/MisSuscripciones.jsp" class="nav-link text-white">
                         <i class="bi bi-table d-block mx-auto mb-1"></i>
                         Mis Suscripciones
                     </a>
                 </li>
                 <li class="text-center">
-                    <a href="miPerfil" class="nav-link text-white">
+                    <a href="${pageContext.request.contextPath}/MiPerfilServlet" class="nav-link text-white">
                         <i class="bi bi-people d-block mx-auto mb-1"></i>
                         Mi Perfil
                     </a>
@@ -36,7 +36,7 @@
                         if ("editor".equalsIgnoreCase(tipoUsuario)) {
                 %>
                     <li class="text-center">
-                        <a href="MisPublicacionesBST.jsp" class="nav-link text-white">
+                        <a href="${pageContext.request.contextPath}/Revista/MisPublicaciones.jsp" class="nav-link text-white">
                             <i class="bi bi-people d-block mx-auto mb-1"></i>
                             Mis Publicaciones
                         </a>
@@ -45,7 +45,7 @@
                         } else if ("suscriptor".equalsIgnoreCase(tipoUsuario)){
                 %>
                     <li class="text-center">
-                        <a href="MagazineDatailsBST.jsp" class="nav-link text-white">
+                        <a href="${pageContext.request.contextPath}/Revista/MagazineDetails.jsp" class="nav-link text-white">
                             <i class="bi bi-journal-bookmark-fill d-block mx-auto mb-1"></i>
                             Ver Revistas
                         </a>
@@ -54,7 +54,7 @@
                         }
                 %>
                     <li class="text-center">
-                        <a href="Logout.jsp" class="nav-link text-white">
+                        <a href="${pageContext.request.contextPath}/cuenta/Logout.jsp" class="nav-link text-white">
                             <i class="bi bi-box-arrow-right d-block mx-auto mb-1"></i>
                             Cerrar Sesión
                         </a>
@@ -63,7 +63,7 @@
                     } else {
                 %>
                     <li class="text-center">
-                        <a href="Login.jsp" class="nav-link text-white">
+                        <a href="${pageContext.request.contextPath}/cuenta/Login.jsp" class="nav-link text-white">
                             <i class="bi bi-box-arrow-in-right d-block mx-auto mb-1"></i>
                             Iniciar Sesión
                         </a>
@@ -75,4 +75,3 @@
         </div>
     </div>
 </div>
-
