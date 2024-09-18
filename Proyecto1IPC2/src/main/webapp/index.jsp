@@ -1,7 +1,7 @@
 <%@page import="backendDB.RevistaService"%>
 <%@page import="Modelos.Revista"%>
 <%@page import="java.util.List"%>
-<%@page import="backenDB.RevistaService"%>
+<%@page import="backendDB.RevistaService"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
