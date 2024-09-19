@@ -17,6 +17,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -38,6 +40,18 @@ public class SuscripcionServlet extends HttpServlet {
         HttpSession session = request.getSession();
         int idUsuario = (int) session.getAttribute("idUsuario");
         int idRevista = Integer.parseInt(request.getParameter("id_revista"));
+        String fechaSuscripcionStr = request.getParameter("fechaSuscripcion");
+        
+        java.sql.Date fechaSuscripcion;
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date parsed = format.parse(fechaSuscripcionStr);
+            fechaSuscripcion = new java.sql.Date(parsed.getTime());
+        } catch (ParseException e) {
+            request.setAttribute("errorMessage", "La fecha de suscripción no es válida.");
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+            return;
+        }
 
         try (Connection connection = ConexionDB.getConnection()) {
             // Verificar si ya existe una suscripción
@@ -59,10 +73,11 @@ public class SuscripcionServlet extends HttpServlet {
             }
 
             // Insertar nueva suscripción
-            String insertSql = "INSERT INTO Suscripcion (id_usuario, id_revista, fecha_suscripcion) VALUES (?, ?, CURDATE())";
+            String insertSql = "INSERT INTO Suscripcion (id_usuario, id_revista, fecha_suscripcion) VALUES (?, ?, ?)";
             try (PreparedStatement insertStatement = connection.prepareStatement(insertSql)) {
                 insertStatement.setInt(1, idUsuario);
                 insertStatement.setInt(2, idRevista);
+                insertStatement.setDate(3, fechaSuscripcion);
                 insertStatement.executeUpdate();
                 
                 // Mensaje de depuración

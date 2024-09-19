@@ -35,6 +35,10 @@
                 <label for="file" class="form-label">Seleccionar archivo PDF:</label>
                 <input type="file" name="file" id="file" class="form-control" accept=".pdf" required>
             </div>
+            <div class="mb-3">
+                <label for="fechaCreacion" class="form-label">Fecha de Creación:</label>
+                <input type="date" name="fechaCreacion" id="fechaCreacion" class="form-control" required>
+            </div>
             
             
             

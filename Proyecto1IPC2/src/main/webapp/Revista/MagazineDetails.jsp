@@ -83,6 +83,12 @@
                                          <form action="${pageContext.request.contextPath}/SuscripcionServlet" method="post" class="d-inline">
                                             <input type="hidden" name="id_usuario" value="<%= session.getAttribute("idUsuario") %>">
                                             <input type="hidden" name="id_revista" value="<%= resultSet.getInt("id_revista") %>">
+                                            
+                                            <div class="mb-3">
+                                            <label for="fechaSuscripcion" class="form-label">Fecha de Suscripción:</label>
+                                            <input type="date" name="fechaSuscripcion" id="fechaSuscripcion" class="form-control" required>
+                                            </div>
+                                            
                                             <button type="submit" class="btn btn-warning">Suscribirse</button>
                                         </form>                                       
                                                  
