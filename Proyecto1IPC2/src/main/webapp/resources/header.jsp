@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li class="text-center">
-                        <a href="${pageContext.request.contextPath}/admin/Reportes.jsp" class="nav-link text-white">
+                        <a href="${pageContext.request.contextPath}/Reportes/Reportes.jsp" class="nav-link text-white">
                             <i class="bi bi-file-earmark-text d-block mx-auto mb-1"></i>
                             Reportes
                         </a>
@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li class="text-center">
-                        <a href="${pageContext.request.contextPath}/admin/Reportes.jsp" class="nav-link text-white">
+                        <a href="${pageContext.request.contextPath}/Reportes/Reportes.jsp" class="nav-link text-white">
                             <i class="bi bi-bar-chart d-block mx-auto mb-1"></i>
                             Reportes
                         </a>
