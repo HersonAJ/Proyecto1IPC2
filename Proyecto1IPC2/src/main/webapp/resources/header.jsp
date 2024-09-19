@@ -30,24 +30,59 @@
                         Mi Perfil
                     </a>
                 </li>
-                <%
-                    if (session != null && session.getAttribute("usuario") != null) {
+
+                <% 
+                    if (session != null && session.getAttribute("usuario") != null) { 
                         String tipoUsuario = (String) session.getAttribute("tipoUsuario");
                         if ("editor".equalsIgnoreCase(tipoUsuario)) {
                 %>
                     <li class="text-center">
                         <a href="${pageContext.request.contextPath}/Revista/MisPublicaciones.jsp" class="nav-link text-white">
-                            <i class="bi bi-people d-block mx-auto mb-1"></i>
+                            <i class="bi bi-file-earmark-post d-block mx-auto mb-1"></i>
                             Mis Publicaciones
                         </a>
                     </li>
+                    <li class="text-center">
+                        <a href="${pageContext.request.contextPath}/admin/Reportes.jsp" class="nav-link text-white">
+                            <i class="bi bi-file-earmark-text d-block mx-auto mb-1"></i>
+                            Reportes
+                        </a>
+                    </li>
                 <%
-                        } else if ("suscriptor".equalsIgnoreCase(tipoUsuario)){
+                        } else if ("suscriptor".equalsIgnoreCase(tipoUsuario)) {
                 %>
                     <li class="text-center">
                         <a href="${pageContext.request.contextPath}/Revista/MagazineDetails.jsp" class="nav-link text-white">
                             <i class="bi bi-journal-bookmark-fill d-block mx-auto mb-1"></i>
                             Ver Revistas
+                        </a>
+                    </li>
+                <%
+                        } else if ("administrador".equalsIgnoreCase(tipoUsuario)) {
+                %>
+                    <!-- Opciones adicionales para Administrador -->
+                    <li class="text-center">
+                        <a href="${pageContext.request.contextPath}/admin/GestionAnuncios.jsp" class="nav-link text-white">
+                            <i class="bi bi-megaphone d-block mx-auto mb-1"></i>
+                            Gestión de Anuncios
+                        </a>
+                    </li>
+                    <li class="text-center">
+                        <a href="${pageContext.request.contextPath}/admin/AsignarCostos.jsp" class="nav-link text-white">
+                            <i class="bi bi-currency-dollar d-block mx-auto mb-1"></i>
+                            Asignar Costos
+                        </a>
+                    </li>
+                    <li class="text-center">
+                        <a href="${pageContext.request.contextPath}/Admin/Cartera.jsp" class="nav-link text-white">
+                            <i class="bi bi-wallet d-block mx-auto mb-1"></i>
+                            Cartera
+                        </a>
+                    </li>
+                    <li class="text-center">
+                        <a href="${pageContext.request.contextPath}/admin/Reportes.jsp" class="nav-link text-white">
+                            <i class="bi bi-bar-chart d-block mx-auto mb-1"></i>
+                            Reportes
                         </a>
                     </li>
                 <%
